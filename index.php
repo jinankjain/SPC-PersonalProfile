@@ -1,43 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-</head>
+<?php include 'includes.php' ?>
 <body>
-	<div class="container-fluid">
-	<div class="row">
-		<nav class="navbar navbar-inverse" role="navigation">
-		  <div class="container-fluid">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-		        <span class="sr-only">Toggle navigation</span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </button>
-		      <a class="navbar-brand" href="http://spc.iitj.ac.in/">Student Placement Cell, IIT Jodhpur</a>
-		    </div>
-		  </div><!-- /.container-fluid -->
-		</nav>
-	</div>
-	</div>
+<?php include 'base.php' ?>
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="col-xs-4"></div>
 			<div class="col-xs-4">
-				<h1 align="center">Login</h1><br><br>
-				<form class="form-horizontal" role="form">
+				<h1 align="center">Login</h1>
+				<p id="errors"></p><br>
+				<form class="form-horizontal" id="loginForm" role="form" action="javascript:login()">
 				  <div class="form-group">
-				    <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+				    <label class="col-sm-2 control-label">Username</label>
 				    <div class="col-sm-10">
-				      <input type="email" class="form-control" id="inputEmail3" placeholder="Username">
+				      <input type="text" class="form-control" name="username" id="username" placeholder="Username">
 				    </div>
 				  </div>
 				  <div class="form-group">
-				    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+				    <label class="col-sm-2 control-label">Password</label>
 				    <div class="col-sm-10">
-				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
 				    </div>
 				  </div>
 				  <div class="form-group">
@@ -49,7 +29,43 @@
 			</div>
 		</div>
 	</div>
-	<script src=	"bootstrap/js/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		function login(){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			var done = false;
+			if(!username && !password){
+				error = "You must supply username and password";
+				$("#errors").html(error).addClass("alert alert-danger");
+			}
+			else if(!username){
+				error = "You must supply username";
+				$("#errors").html(error).addClass("alert alert-danger");
+			}else if(!password){
+				error = "You must supply password";
+				$("#errors").html(error).addClass("alert alert-danger");
+			}else{
+				done = true;
+			}
+			if(done){
+        		var loginForm = $("#loginForm").serialize();
+        		console.log(loginForm);
+        		$.ajax({
+        		  type:"POST",
+        		  url:"login.php",
+        		  data: loginForm,
+        		  success:function(data){
+        		    if(data == "error"){
+        		     	error = "Username or Password is incorrect";
+        		     	$("#errors").html(error).addClass("alert alert-danger");
+        		     	done=false;
+        		    }else{
+        		    	window.location.href = "user.php";
+        		    }
+        		  }
+        		});
+			}
+		}
+	</script>
 </body>
 </html>
