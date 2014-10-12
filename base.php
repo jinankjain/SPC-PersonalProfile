@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
 <div class="row">
 	<nav class="navbar navbar-inverse" role="navigation">

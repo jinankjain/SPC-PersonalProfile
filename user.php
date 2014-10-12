@@ -31,6 +31,10 @@
 			</div>
 			<?php 
 				$checkBranch = str_split($result['Roll_No']);
+				$isME = 0;
+				$isCSE = 0;
+				$isEE = 0;
+				$isSS = 0;
 				if($checkBranch[7] == "1"){
 					$isEE = true;
 				}else if($checkBranch[7] == "2"){
@@ -40,8 +44,53 @@
 				}else if($checkBranch[7] == "0"){
 					$isCSE = true;
 				}
-				
 			?>
+			<?php if($isME) {?>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Fluid and Thermal</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Automobile</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Manufacturing and Design</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+			<?php }?>
+			<?php if($isEE) {?>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Power System</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Commuincation</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Electronics</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+			<?php }?>
+			<?php if($isSS) {?>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Finance and Analytics</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+				<div class="row">
+					<br>
+					<div class="col-xs-4"><h4>Non Core</h4></div>
+					<div class="col-xs-8"><textarea></textarea></div>
+				</div>
+			<?php }?>
 		</div>
 	</div>
 </div>
