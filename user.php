@@ -97,13 +97,13 @@
             <?php }?>
             <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <button id="logout" class="btn btn-primary">Logout</button>
         </div>
     </div>
 </div>
 <script>
     function updateDetails(){
         var updateForm = $("#updateDetails").serialize();
-        console.log(updateForm);
         $.ajax({
           type:"POST",
           url:"studProfile.php",
@@ -113,4 +113,13 @@
           }
         });
     }
+    $("#logout").click(function(){
+        $.ajax({
+            type:"POST",
+            url:"logout.php",
+            success:function(data){
+                window.location.href = "index.php";    
+            }
+        });
+    });
 </script>
