@@ -65,6 +65,16 @@
                     <div class="col-xs-4"><h4>Manufacturing and Design</h4></div>
                     <div class="col-xs-8"><textarea rows="4" name="interest3"><?php echo $details['interest3'] ?></textarea></div>
                 </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Technical Skills</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest4"><?php echo $details['interest4'] ?></textarea></div>
+                </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Other</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest5"><?php echo $details['interest5'] ?></textarea></div>
+                </div>
             <?php }?>
             <?php if($isEE) {?>
                 <div class="row">
@@ -82,17 +92,42 @@
                     <div class="col-xs-4"><h4>Electronics</h4></div>
                     <div class="col-xs-8"><textarea rows="4" name="interest3"><?php echo $details['interest3'] ?></textarea></div>
                 </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Technical Skills</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest4"><?php echo $details['interest4'] ?></textarea></div>
+                </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Other</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest5"><?php echo $details['interest5'] ?></textarea></div>
+                </div>
             <?php }?>
             <?php if($isSS) {?>
                 <div class="row">
                     <br>
-                    <div class="col-xs-4"><h4>Finance and Analytics</h4></div>
+                    <div class="col-xs-4"><h4>Finance</h4></div>
                     <div class="col-xs-8"><textarea rows="4" name="interest1"><?php echo $details['interest1'] ?></textarea></div>
                 </div>
                 <div class="row">
                     <br>
-                    <div class="col-xs-4"><h4>Non Core</h4></div>
+                    <div class="col-xs-4"><h4>Analytics</h4></div>
                     <div class="col-xs-8"><textarea rows="4" name="interest2"><?php echo $details['interest2'] ?></textarea></div>
+                </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Coding</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest2"><?php echo $details['interest3'] ?></textarea></div>
+                </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Technical Skills</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest4"><?php echo $details['interest4'] ?></textarea></div>
+                </div>
+                <div class="row">
+                    <br>
+                    <div class="col-xs-4"><h4>Other</h4></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest5"><?php echo $details['interest5'] ?></textarea></div>
                 </div>
             <?php }?>
             <button type="submit" class="btn btn-primary">Submit</button>
