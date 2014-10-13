@@ -2,7 +2,7 @@
 	include 'db-con.php';
 	session_start();
 	$username = $_SESSION['username'];
-	$internship = $_POST['internship'];
+	$internship = mysql_real_escape_string($_POST['internship']);
 	if(isset($_POST['interest1'])){
 		$interest1 = mysql_real_escape_string($_POST['interest1']);	
 	}else{
@@ -24,7 +24,6 @@
 	if($result['Roll_No']){	
 		$query = "UPDATE userProfile SET internship='$internship', interest1='$interest1', interest2='$interest2', interest3='$interest3' WHERE Roll_No='$username'";
 		mysql_query($query);
-		echo mysql_query($query);
 	}else{
 		$query = "INSERT INTO userProfile (id, Roll_No, internship, interest1, interest2, interest3) VALUES ('','$username','$internship','$interest1','$interest2','$interest3')";
 		mysql_query($query);

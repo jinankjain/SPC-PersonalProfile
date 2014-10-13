@@ -1,8 +1,8 @@
 <?php 
 	include 'db-con.php';
 	session_start();
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = mysql_real_escape_string($_POST['username']);
+	$password = mysql_real_escape_string($_POST['password']);
 	$query = "SELECT * FROM USER where USER_NAME='$username' AND md5($password)";
 	$queryResult = mysql_query($query);
 	if($queryResult){
