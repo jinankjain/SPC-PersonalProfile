@@ -107,7 +107,7 @@
         $.ajax({
           type:"POST",
           url:"studProfile.php",
-          data: loginForm,
+          data: updateForm,
           success:function(data){
             window.location.href = "user.php";
           }
