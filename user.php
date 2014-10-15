@@ -31,7 +31,7 @@
             <div class="row">
                 <form id="updateDetails" action= "javascript:updateDetails()">
                 <div class="col-xs-4"><h4>Internship Details</h4></div>
-                <div class="col-xs-8"><textarea type="text" cols="50" rows="4" name="internship"><?php echo $details['internship'] ?></textarea></div>
+                <div class="col-xs-8"><textarea maxlenght="500" type="text" cols="50" rows="4" name="internship"><?php echo $details['internship'] ?></textarea></div>
             </div>
             <?php 
                 $checkBranch = str_split($result['Roll_No']);
@@ -117,7 +117,7 @@
                 <div class="row">
                     <br>
                     <div class="col-xs-4"><h4>Coding</h4></div>
-                    <div class="col-xs-8"><textarea rows="4" name="interest2"><?php echo $details['interest3'] ?></textarea></div>
+                    <div class="col-xs-8"><textarea rows="4" name="interest3"><?php echo $details['interest3'] ?></textarea></div>
                 </div>
                 <div class="row">
                     <br>
